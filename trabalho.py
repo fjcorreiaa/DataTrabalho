@@ -32,9 +32,9 @@ for k in Regiao:
     df.loc[ df['Sigla'].isin(Regiao[k]), 'Regiao'] = k
 
 
-#SELECÃO DO ESTADO
-estados = list(df['Estado'].unique())
-state = st.sidebar.selectbox('Qual estado?', estados)
+#SELECÃO DA REGIÃO
+regioes = list(df['Regiao'].unique())
+state = st.sidebar.selectbox('Qual região?', regioes)
 
 #SELEÇÃO DA COLUNA
 #column ='Pessoas ocupadas'
@@ -44,8 +44,8 @@ column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 #SELEÇÃO DAS LINHAS QUE PERTECEM AO ESTADO 
 df = df[df['Estado'] == Estado]
 
-fig = px.line(df, x="Estado", y=column, title=column + ' - ' + state)
-fig.update_layout( xaxis_title='Data', yaxis_title=column.upper(), title = {'x':0.5})
+fig = st.bar_chart(df, x="Estado", y=column, title=column + ' - ' + Estados)
+fig.update_layout( xaxis_title='Estados', yaxis_title=column.upper(), title = {'x':0.5})
 
 st.title('Pessoas Ocupadas e Desocupadas no Brasil - 2021')
 st.write('Nessa aplicação, o usuário tem a opção de escolher o estado e o tipo de informação para mostrar o gráfico. Utilize o menu lateral para alterar a mostragem.')
