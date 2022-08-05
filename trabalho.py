@@ -44,7 +44,7 @@ column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 #SELEÇÃO DAS LINHAS QUE PERTECEM A REGIAO 
 df = df[df['Regiao'] == Regiao]
 
-fig = px.bar (df, x="Estado", y=column, title=column + ' - ' + Regiao)
+fig = px.bar (df, x="Estado", y=column, title=column + ' - ' )
 fig.update_layout( xaxis_title='Estado', yaxis_title=column.upper(), title = {'x':0.5})
 
 st.title('Pessoas Ocupadas e Desocupadas no Brasil - 2021')
