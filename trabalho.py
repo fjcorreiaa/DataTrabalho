@@ -44,10 +44,11 @@ column = st.sidebar.selectbox('Qual tipo de informação?', colunas)
 #SELEÇÃO DAS LINHAS QUE PERTECEM A REGIAO 
 df = df[df['Regiao'] == Regiao]
 
-fig = px.bar (df, x="Estado", y=column, title=column + ' - da Região' + Regiao )
+fig = px.bar (df, x="Estado", y=column, color='Estado', title=column + ' - Região' + Regiao )
 fig.update_layout( xaxis_title='Estado', yaxis_title=column.upper(), title = {'x':0.5})
 
 st.title('Pessoas Ocupadas e Desocupadas no Brasil - 2021')
+st.subheader('Dados brasileiros sobre emprego, no primeiro trimestre de 2021')
 st.write('Nessa aplicação, o usuário tem a opção de escolher o estado e o tipo de informação para mostrar o gráfico. Utilize o menu lateral para alterar a mostragem.')
 
 st.plotly_chart(fig, use_container_width=True)
