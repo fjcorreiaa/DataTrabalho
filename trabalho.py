@@ -34,7 +34,7 @@ for k in Regiao:
 
 #SELECÃO DA REGIÃO
 regioes = list(df['Regiao'].unique())
-state = st.sidebar.selectbox('Qual região?', regioes)
+Regiao = st.sidebar.selectbox('Qual região?', regioes)
 
 #SELEÇÃO DA COLUNA
 #column ='Pessoas ocupadas'
